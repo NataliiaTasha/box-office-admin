@@ -4,12 +4,12 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const app = express();
 
-// Підключення до бази даних
+// Connecting to the database
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'your_password',
-  database: 'exhibitions_db'
+  password: '',
+  database: 'exhibition-hub-boxoffice'
 });
 
 // Environment for receiving JSON requests
