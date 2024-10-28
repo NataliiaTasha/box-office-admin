@@ -1,6 +1,8 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import User from './User';
+//import User from './User';
+import DashboardMenu from './DashboardMenu';
+import ExhibitionForm from './ExhibitionForm';
 
 
 const DashboardPage = () => {
@@ -8,7 +10,8 @@ const DashboardPage = () => {
         <div className="DBContainer">
             <DashboardMenu />
             <Routes>
-                <Route path="/user" element={<User />} />
+                {/* <Route path="/user" element={<User />} /> */}
+                <Route path="/exhibitionForm" element={<ExhibitionForm />} />
             </Routes>
         </div>
     );
