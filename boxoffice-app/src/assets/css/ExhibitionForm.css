@@ -1,0 +1,27 @@
+input {
+    padding: 0.5vw 0.8vw;
+    margin: 1vw;
+   border: 1px solid greenyellow;
+   border-radius: 0.8vw;
+}
+
+.addExhibition {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 2vw;
+    padding: 2vw;
+    }
+
+    button {
+        padding: 0.7vw 1vw;
+        margin: 1vw;
+        border: 1px solid greenyellow;
+        background-color: greenyellow;
+        color: black;
+        font-size: 1vw;
+        border-radius: 0.8vw;
+}
+    
