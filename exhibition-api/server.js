@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const jwt = require('jsonwebtoken');
@@ -7,11 +8,12 @@ const app = express();
 
 // Setting up a database connection
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'exhibition-hub-boxoffice'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
 });
+
 
 // CORS settings 
 app.use(cors());
@@ -50,7 +52,8 @@ app.post('/api/login', (req, res) => {
       if (!bcrypt.compareSync(password, results[0].password)) {
           return res.status(401).send({ error: 'Invalid credentials' });
       }
-      const token = jwt.sign({ id: results[0].id, role: results[0].role }, 'your_jwt_secret', { expiresIn: '1h' });
+      const token = jwt.sign({ id: results[0].id, role: results[0].role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+
       res.send({ message: 'Login successful!', token });
   });
 });
